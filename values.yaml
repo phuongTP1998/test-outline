@@ -1,0 +1,31 @@
+mono:
+  replicaCount: 1
+  image:
+    repository: outlinewiki/outline
+    tag: latest
+  port: 3000
+  envVars:
+    URL: postgres://godmerch:godmerch@localhost:5432/outline
+    PORT: 3000
+    REDIS_URL: redis://localhost:6479
+  ingress:
+    enabled: true
+    url: outline.godmerch.com
+  postgresql:
+    enabled: true
+    resources:
+      requests:
+        cpu: 200m
+        memory: 500Mi
+      limits:
+        cpu: 400m
+        memory: 750Mi
+  redis:
+    enabled: true
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 250m
+      memory: 256Mi
