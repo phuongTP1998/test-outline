@@ -1,5 +1,6 @@
 mono:
   replicaCount: 1
+  healthcheckPath: /_health
   image:
     repository: outlinewiki/outline
     tag: latest
