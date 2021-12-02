@@ -5,9 +5,9 @@ mono:
     tag: latest
   port: 3000
   envVars:
-    URL: postgres://godmerch:godmerch@localhost:5432/outline
+    DATABASE_URL: postgres://postgres:godmerch@localhost:5432/godmerch
     PORT: 3000
-    REDIS_URL: redis://localhost:6479
+    REDIS_URL: redis://localhost:6379
   ingress:
     enabled: true
     url: outline.godmerch.com
